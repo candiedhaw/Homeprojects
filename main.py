@@ -3,7 +3,7 @@ import random
 import vlc
 import time
 
-speed_newsong=0.5
+speed_newsong=0.6
 speed_oldsong=0.8
 num_song = 4
 df= pd.read_csv('resources/Time_Suzuki_Violin_Book_1.csv', header=None)
@@ -53,7 +53,7 @@ def play_song(song_ID):
 
        # start playing video
        media_player.play()
-       time.sleep(df['Duration'][song_ID]/speed+7.5)
+       time.sleep(df['Duration'][song_ID]/speed+0)
        #media_player.stop()
 
 
@@ -69,7 +69,7 @@ print('')
 speed=speed_newsong
 for i in range(3):
        print(i)
-       #play_song(learned_ID)
+       play_song(learned_ID)
 
 #Play random learned song for twice or twinkle for once
 speed=speed_oldsong
