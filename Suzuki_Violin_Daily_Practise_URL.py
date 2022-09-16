@@ -2,9 +2,31 @@ import pandas as pd
 import random
 import vlc
 import time
+import pafy
+#
+#to install vlc: https://www.videolan.org/vlc/
+#to install youtube_dl: pip install youtube-dl
+#Issue: ERROR: Unable to download API page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed:
+# unable to get local issuer certificate
+#Solution: If you're using macOS go to Macintosh HD > Applications > Python3.6 folder (or whatever version of python you're using) > double click on "Install Certificates.command" file. :D
+
+# url of the video
+url = "https://youtu.be/gfU-O0JeFbY"
+
+# creating pafy object of the video
+video = pafy.new(url)
+
+# getting best stream
+best = video.getbest()
+
+# creating vlc media player object
+media = vlc.MediaPlayer(best.url)
+
+# start playing video
+media.play()
+
+
 ####### This file is for suzuki violin daily pracese.
-# Before using the code, you will need:
-#to download and install vlc: https://www.videolan.org/vlc/
 #In order to make it work for you, you will need to make the following changes:
 # 1. Open Time_Suzuki_Violin_Book_1.xlsx or .csv
 # 2. Find the ID for the song that you learned (learned_ID).
@@ -12,10 +34,10 @@ import time
 # 3. You can then change the other parameters:
 
 # Parameters to modify:
-learned_ID = 13 # The ID of the last song that you learned. The ID for the first song Twinkle Variations is 0
+learned_ID = 12 # The ID of the last song that you learned. The ID for the first song Twinkle Variations is 0
 speed_newsong=0.6 #The speed for the new song
 rp_newsong=3 # How many times to play the new song
-speed_oldsong=0.85 #The speed for the old song
+speed_oldsong=0.8 #The speed for the old song
 num_song = 4 #The number of old song that you want to play besides the new song
 
 
