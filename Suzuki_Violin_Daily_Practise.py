@@ -12,14 +12,14 @@ import time
 # 3. You can then change the other parameters:
 
 # Parameters to modify:
-learned_ID = 13 # The ID of the last song that you learned. The ID for the first song Twinkle Variations is 0
+learned_ID = 15       # The ID of the last song that you learned. The ID for the first song Twinkle Variations is 0
 speed_newsong=0.6 #The speed for the new song
-rp_newsong=3 # How many times to play the new song
-speed_oldsong=0.85 #The speed for the old song
-num_song = 4 #The number of old song that you want to play besides the new song
+rp_newsong=2 # How many times to play the new song
+speed_oldsong=0.7 #The speed for the old song
+num_song = 3 #The number of old song that you want to play besides the new song cat meow i love cats cat cat cat cat
 
 
-###############################################################
+
 
 # Open the list of song names and time label information
 df= pd.read_csv('resources/Time_Suzuki_Violin_Book_1.csv', header=None)
@@ -29,6 +29,7 @@ lenth_song = '20:22'
 df[['Start','Name']] = df[0].str.split(' ',1,expand = True)
 df['End']=''
 df['Duration'] =''
+#df['Start'][15] = '15:48'
 
 def time_to_hm(times):
        t00=time.strptime('00:00',('%M:%S'))
@@ -44,6 +45,8 @@ for i in df.index:
 
 df['End'][i] = time_to_hm(lenth_song)
 df['Duration'] =df['End']-df['Start']
+
+
 
 ############# Play Random Song ################
 
@@ -80,7 +83,7 @@ print('Today Nolan is going to play the following '+str(num_song) +' songs:')
 print(random_song_lst)
 print('')
 
-#Play the new song for three times
+#Play the new song for three times`
 speed=speed_newsong
 for i in range(rp_newsong):
        print(i)
