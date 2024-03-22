@@ -11,14 +11,20 @@ import time
 # For exp, if you just learned 'Lightly Row', change learned_ID = 1
 # 3. You can then change the other parameters:
 
-# Parameters to modify:
-learned_ID = 15       # The ID of the last song that you learned. The ID for the first song Twinkle Variations is 0
+#
+learned_ID = 16       # The ID of the last song that you learned. The ID for the first song Twinkle Variations is 0
 speed_newsong=0.6 #The speed for the new song
-rp_newsong=2 # How many times to play the new song
-speed_oldsong=0.7 #The speed for the old song
+rp_newsong=0 # How many times to play the new song
+speed_oldsong=0.8 #The speed for the old song
 num_song = 3 #The number of old song that you want to play besides the new song cat meow i love cats cat cat cat cat
 
+'''
+# pause the music
+media_player.pause()
 
+# resume playback
+media_player.play()
+'''
 
 
 # Open the list of song names and time label information

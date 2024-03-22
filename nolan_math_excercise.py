@@ -56,6 +56,18 @@ for num in np.arange(total_questions):
             print("what's the result of " + question)
 
     answer_from_nolan = input()
+
+    try:
+        answer_from_nolan = int(answer_from_nolan)
+    except:
+        print("Please put a number if you know what's math otherwise don't play this...")
+        try:
+            answer_from_nolan = int(input())
+        except:
+            print("Goodbye you are a cat ... ")
+            exit()
+
+
     #print("You have picked "+str(answer_from_nolan) +" as your answer")
     if int(answer_from_nolan) == answer:
         right_answer_count = right_answer_count+1
@@ -76,7 +88,7 @@ if right_answer_count/total_questions>=0.8:
     else:
         print("Congrats, you have achieved your goal !!!")
 else:
-    print("Good luck next time ...")
+    print("Good luck next time cat cat cat")
 
 print("----------------------------------------------------------------------------------------")
 print("Let's review this exercise ...")
